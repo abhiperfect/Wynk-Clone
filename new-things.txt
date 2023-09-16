@@ -1,0 +1,75 @@
+Nav-bar:
+-------
+html:
+----- 
+
+<nav>
+    <ul>
+         <li class="brand"><img src="logo.png" alt="spotify">Spotify</li> 
+         <li>Home</li> 
+         <li>About</li>  
+    </ul>
+</nav>
+
+
+css:
+----
+//used fonts: ubuntu, sans-serif 
+
+
+nav{
+  font-family: 'ubutu', sans-serif;
+
+}
+
+nav ul{
+      display: flex;
+      list-style-type:none;   //remove circle of list
+      height:65px;
+      background-color:black;
+      color:white;
+}
+.brand{
+       display:flex;
+       align-items: center;
+       font-weight: bolder;
+       font-size:3rem;
+}
+_________________________________________________
+
+Remove all default margin and padding:
+--------------------------------------
+
+*{
+  margin:0;
+  padding:0;
+}
+
+__________________________________________________
+
+Bottom:
+-------
+
+//Range slider
+
+< input type="range" name="range" id="myProgressBar" min="0" max="100" >
+
+__________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
