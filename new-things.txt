@@ -56,6 +56,161 @@ Bottom:
 
 __________________________________________________
 
+This is used when you want, if your hover at particular item then your cursor arrrow change to hand.
+
+css:
+----
+
+.icon{
+cursor: pointer;
+}
+
+--------------------------------------------------
+
+This code when you change its opacity to one using javascipt, it will fade out.
+
+css:
+----
+img{
+   opacity: 0;
+   transition: opacity 1s ease-in;
+}
+
+
+_________________________________________________
+
+
+Make own datatype array:
+------------------------
+
+
+let songs = [
+          {songName: "Salam-e-ishq",filePath:"song/1.mp3", coverPath:"cover/1.jpg"},
+          {songName: "Salam-e-ishq",filePath:"song/2.mp3", coverPath:"cover/2.jpg"},
+          {songName: "Salam-e-ishq",filePath:"song/3.mp3", coverPath:"cover/3.jpg"},
+          {songName: "Salam-e-ishq",filePath:"song/4.mp3", coverPath:"cover/4.jpg"},
+          {songName: "Salam-e-ishq",filePath:"song/5.pm3", coverPath:"cover/5.jpg"},
+          {songName: "Salam-e-ishq",filePath:"song/6.mp3", coverPath:"cover/6.jpg"},
+          {songName: "Salam-e-ishq",filePath:"song/7.mp3", coverPath:"cover/7.jpg"}
+]
+
+//Create audio object
+
+let audioElement = new Audio('1.mp3');
+
+//play audio
+
+audioElement.play();
+
+__________________________________________________________________________________
+
+Prsess play icon to  play song, press pause icon to pause song.
+
+
+html:
+---
+   <button id="masterPlay"></button>
+
+js:
+--
+
+var masterPlay = document.querySelector("#masterPlay");
+
+masterPlay.addEventListener("click", function(){
+     if( audioElement.paused || audioElement.currentTime <= 0 ){
+         audioElement.play();
+         masterPlay.classList.remove('fa-play-circle');    //remove play icon
+         masterPlay.classList.add('fa-pause-circle');      //add pause icon
+      }else{
+         audioElement.pause();
+         masterPlay.classList.add('fa-pause-circle');      //remove pause icon  
+         masterPlay.classList.remove('fa-play-circle');    //add play icon
+
+      }
+    
+});
+
+________________________________________________________________________________________
+
+
+Change your range-bar(Slider) according to song durattion:
+./timeupdate Event
+
+audioElement.addEventListener("timeupdate", function(){
+
+       progress = parseInt(( audioElement.currentTime/audioElement.duration ) * 100);
+       myProgressBar.value = progress;
+
+});
+
+
+
+Change your song durattion according to range-bar(Slider):
+./change Event
+
+myProgressBar.addEventListener('change', function(){
+
+     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+
+});
+
+
+__________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

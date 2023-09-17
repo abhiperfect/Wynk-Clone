@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
     background-color: #0C0F12;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
@@ -44,8 +45,9 @@ ul li{
 .container{
     width: 70rem;
     background-color: #0C0F12;
-    height: auto;
+    height: 100vh;
     display: grid;
+    align-items: start;
     grid-template-columns: 1fr 2fr;
     padding: 10px;
 }
@@ -59,19 +61,20 @@ ul li{
     position: sticky;
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     top: 0;
     bottom: 0;
     background-color: #21252D;
     padding: 0px;
-    height: 6rem;
+    
     font-size: 20px;
     color: #F7F5F5;
 }
 
 .material-symbols-outlined {
     font-variation-settings:
-  'FILL' 0,
+  'FILL' 1,
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
@@ -91,8 +94,15 @@ span{
     margin: 0;
     padding: 0;
 }
+/* #songBanner-h3{
+  position: absolute;
+  color: #CC0016;
+  top: 250px;
+  left: 100px;
+} */
 .songBanner > img{
-    height: 15rem;
+    height: 250px;
+    margin-top: 22px;
     border-radius: 7px;
 }
 
@@ -100,7 +110,7 @@ span{
 .songList{
     display: grid;
     padding: 12px;
-
+   height: auto;
 }
 .songList > .list{
  margin: 1px;
@@ -131,7 +141,7 @@ span{
     width: 145px;
     line-height: 20px;
     font-family: 'Roboto', sans-serif;
-    color: aliceblue;
+    color: white;
     font-size: 14px;
     display: flex;
     justify-content: start;
@@ -139,13 +149,39 @@ span{
     margin: 8px;
     border-radius: 24px;
 }
+
+/* ----------------play-songs */
 .list-play{
-    background-color: #CC0016;
-    border: none;   
+    background-color:red;
+    border: none; 
+    color: white;  
 }
+/* play songs on hover */
+.list-play:hover{
+    background-color: #CC0016;
+    border: none;
+}
+/* play song heading */
+
+#play-song-h4{
+    color: white;
+}
+
+/* follow-button */
 .list-follow{
     background-color: #0C0F12;
     border: 1px solid white;
+}
+/* follow-button on hover */
+.list-follow:hover{
+    opacity: 0.7;
+    /* background-color: #0C0F12; */
+    /* border: 1px solid white; */
+}
+
+/* follow heading */
+#follow-h4{
+    color: white;
 }
 
 .list-3{
@@ -156,23 +192,27 @@ span{
     font-size: 16px;
     line-height: 24px;
     grid-template-columns: 10fr 2fr 2fr 6fr;
+    
 }
 #track{
     word-spacing: 14px;
+
 }
-                        
-                     /*class for hover on the song*/ 
-.song-selected{             
-    border: 1px solid white;
-    border-radius: 12px;
-}
+    
 .song-list{
 
     display: grid;
     grid-template-columns: 10fr 2fr 2fr 2fr 2fr 2fr;
    align-items: center;
+   
 }
+                    
+/*class for hover on the song*/ 
 
+.song-list:hover {             
+    border: 1px solid gray;
+    border-radius: 12px;
+}
 
 .track-1-image{
     height: 50px;
@@ -200,6 +240,18 @@ h4{
     line-height: 20px;
 }
 
+h3{
+    color: #F7F5F5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+h2{
+    color:     #868789;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+}
 #more-vert-0{
     display: flex;
     justify-content: center;
@@ -217,4 +269,76 @@ h4{
     height: 30px;
     width: 30px;
     border-radius: 50%;
+}
+
+
+
+/* decorating slider */
+.slider{
+    -webkit-appearance: none;  /*default  browser css remove*/ 
+    appearance: none;       /*default  browser css remove*/    
+    height: 2px;          
+    background: grey;  /*background*/
+    opacity: 0.7;   
+}
+
+/* when you hover on slider opacity will be 1 */
+.slider:hover{
+    opacity: 1;
+
+}
+/* decorating thumb of slider */
+.slider::-webkit-slider-thumb{
+    -webkit-animation: none;
+    appearance: none;
+    background: red;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    opacity: 1;
+
+    /* box-shadow: -407px 0 0 400px red; */
+    /* box-shadow: 10px 10px 10px 10px #CC0016; */
+}
+
+/* bottom play  */
+#bottom-play-circle{
+    font-size: 50px;
+     border-radius: 50%;
+    color: red;
+    /* background-color: #F7F5F5; */
+ 
+   
+}
+/* bottom play on hover */
+#bottom-play-circle:hover{
+    opacity: 0.7;
+}
+
+.play{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+}
+
+/* adjust bottom song name and play buttons */
+.song-of-bottom{
+   display: grid;
+   align-items: center;
+   grid-template-columns: repeat(3, 1fr);
+   width: 100%;
+}
+.song-of-bottom  div{
+    /* background-color: #CC0016; */
+
+}
+
+.song-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+   align-items: start;
+}
+.bottom-album{
+    display: flex;
 }
