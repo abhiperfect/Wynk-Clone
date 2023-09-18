@@ -164,6 +164,48 @@ ________________________________________________________________________________
   var currTime = Math.floor(track.currentTime).toString(); 
   var duration = Math.floor(track.duration).toString();
 
+____________________________________________________________________
+
+./All git current processe will be remove
+
+$ rm -f ./.git/index.lock
+_____________________________________________________________
+
+
+
+
+___________________________________________________________
+ERROR_SOLVE: TIME DURATION OF AUDIO
+_____________________________________________________________
+
+
+
+./if you give this script to dispaly time in duration of audio in html this show "Nan" which is kind of error for you.
+
+ex:
+
+index.html:
+----------________________________________________
+
+ <h1 id="temp-duration" > </h1>
+
+___________________________________________________
+
+script.js:
+----------___________________________________________________________
+
+
+var au =  new Audio('./music/Dua_Lipa_Ft_DaBaby_-_Levitating.mp3');
+
+document.querySelector('#temp-duration').textContent = au.duration;
+
+______________________________________________________________________
+
+Above code show "NaN" into HTML tag.
+
+____________________________________________________________________
+
+_
 
 
 
@@ -178,8 +220,33 @@ ________________________________________________________________________________
 
 
 
+______________________________________________________________________
+TO SOLVE ABOVE ERROR USE FOLLOWING STEPS:
+________________________________________________________________
+
+./Add preload="metadata" to your tag to have it request the metadata for your audio object:
 
 
+./In your code, attach an event handler, to set the duration when the metadata has been loaded:
+
+
+index.html:
+----------________________________________________
+
+ <h1 id="temp-duration"  preload="metadata" >New English Songs</h1>
+___________________________________________________
+
+
+script.js:
+----------___________________________________________________________
+
+var au =  new Audio('./music/Dua_Lipa_Ft_DaBaby_-_Levitating.mp3');
+
+au.onloadedmetadata = function() {
+     console.log(au.duration);
+     document.querySelector('#temp-duration').textContent = au.duration;
+};
+_______________________________________________________________________
 
 
 
