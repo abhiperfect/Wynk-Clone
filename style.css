@@ -328,10 +328,10 @@ h2{
    grid-template-columns: repeat(3, 1fr);
    width: 100%;
 }
-.song-of-bottom  div{
+/* .song-of-bottom  div{ */
     /* background-color: #CC0016; */
 
-}
+/* } */
 
 .song-name{
     display: flex;
