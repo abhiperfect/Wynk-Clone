@@ -262,6 +262,58 @@ _______________________________________________________________________
 
 
 
+______________________________________________________________________
+TO SOLVE ABOVE ERROR USE FOLLOWING STEPS:
+________________________________________________________________
+
+./Add preload="metadata" to your tag to have it request the metadata for your audio object:
+
+
+./In your code, attach an event handler, to set the duration when the metadata has been loaded:
+
+
+index.html:
+----------________________________________________
+
+ <h1 id="temp-duration"  preload="metadata" >New English Songs</h1>
+___________________________________________________
+
+
+script.js:
+----------___________________________________________________________
+
+var au =  new Audio('./music/Dua_Lipa_Ft_DaBaby_-_Levitating.mp3');
+
+au.onloadedmetadata = function() {
+     console.log(au.duration);
+     document.querySelector('#temp-duration').textContent = au.duration;
+};
+_______________________________________________________________________
+
+
+
+/* make website responsive when website width reduce */
+@media screen and (max-width: 1000px) {
+    .container{
+        width: 80rem;
+        background-color: #0C0F12;
+        
+        display: grid;
+        align-items: start;
+        grid-template-columns: 1fr;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 15px;
+    }
+  }
+  -----------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
