@@ -78,11 +78,12 @@ function pauseAudio(){
 for( var i = 0; i < songs.length; ++i){
 
 document.querySelectorAll(".song-list")[i].addEventListener( 'click', function(){
-    var currentSongIndex = this.querySelector(".track-1 > .track-index").textContent ;
-   
+    currentSongIndex = this.querySelector(".track-1 > .track-index").textContent ;
+
 
     // chooseSong(currentSongIndex);
     pauseAudio();
+    document.querySelector(".bottom").style.visibility = "visible";
     audioElement = new Audio(songs[currentSongIndex-1].Track);
     audioElement.play();
     document.querySelector('#bottom-play-circle').textContent = 'stop_circle';
@@ -93,6 +94,29 @@ document.querySelectorAll(".song-list")[i].addEventListener( 'click', function()
 
 }
 
+document.querySelector("#play-song-button").addEventListener('click',function () {
+    pauseAudio();
+    document.querySelector(".bottom").style.visibility = "visible";
+    audioElement = new Audio(songs[0].Track);
+    audioElement.play();
+    document.querySelector('#bottom-play-circle').textContent = 'stop_circle';
+    document.querySelector("#bottom-song-image").src = songs[0].TrackImage;
+    document.querySelector("#bottom-song-name").textContent = songs[0].TrackName;
+    document.querySelector("#bottom-song-artist-album").textContent = songs[0].TrackArtist+" "+songs[0].TrackAlbum; 
+});
+
+
+    document.querySelector("#skip_next").addEventListener('click',function () {
+        currentSongIndex = currentSongIndex+1;
+       
+        pauseAudio();
+        audioElement = new Audio(songs[currentSongIndex-1].Track);
+        audioElement.play();
+        document.querySelector('#bottom-play-circle').textContent = 'stop_circle';
+        document.querySelector("#bottom-song-image").src = songs[currentSongIndex-1].TrackImage;
+        document.querySelector("#bottom-song-name").textContent = songs[currentSongIndex-1].TrackName;
+        document.querySelector("#bottom-song-artist-album").textContent = songs[currentSongIndex-1].TrackArtist+" "+songs[currentSongIndex-1].TrackAlbum;
+    });    
 
 
 
