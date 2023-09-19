@@ -45,7 +45,7 @@ ul li{
 .container{
     width: 70rem;
     background-color: #0C0F12;
-    height: 100vh;
+    
     display: grid;
     align-items: start;
     grid-template-columns: 1fr 2fr;
@@ -110,8 +110,10 @@ span{
 .songList{
     display: grid;
     padding: 12px;
-   height: auto;
+   height: fit-content ;
+   cursor: pointer;
 }
+
 .songList > .list{
  margin: 1px;
  height: 67px;
