@@ -133,6 +133,28 @@ masterPlay.addEventListener("click", function(){
 ________________________________________________________________________________________
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________________________________________________
+
+
+< input type="range" name="range" id="myProgressBar" min="0" max="100" >
+________________________________________________________________________________________
+
+myProgressBar = document.querySelector("#myProgressBar");
+
 Change your range-bar(Slider) according to song durattion:
 ./timeupdate Event
 
@@ -314,11 +336,19 @@ _______________________________________________________________________
 
 
 
+./Write way to using listen current time of a audio
 
+./first chnage meta data then event listener of timeupdate
+________________________________________________________________
+   var audioElement = new Audio('a.mp3');
+   audioElement.play();
+    audioElement.onloadeddata = function(){                     
+        audioElement.addEventListener('timeupdate',function(){
+            console.log(audioElement.currentTime);
+        });
+    }
 
-
-
-
+_________________________________________________________________
 
 
 

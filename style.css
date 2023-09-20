@@ -46,7 +46,6 @@ ul li{
 .container{
     width: 80rem;
     background-color: #0C0F12;
-    
     display: grid;
     align-items: start;
     grid-template-columns: 25% 75%;
